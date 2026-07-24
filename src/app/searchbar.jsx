@@ -118,19 +118,23 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     paddingTop: 1,
+    paddingHorizontal: 16,
+    width: "100%",
     height: "13%",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#101215",
   },
   innercontainer: {
     flexDirection: "row",
     backgroundColor: "#101215",
-    width: "1%",
+    padding: 10,
   },
+
   inputContainer: {
-    width: 550,
-    height: 50,
+    height: 44,
+    flex: 1,
+    marginLeft: 15,
     backgroundColor: "#fff",
     borderRadius: 10,
     flexDirection: "row",

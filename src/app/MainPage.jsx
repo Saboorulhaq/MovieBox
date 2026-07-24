@@ -54,22 +54,16 @@ const MainPage = () => {
           <Text style={styles.text}>M</Text>
           <Text style={styles.text2}>B</Text>
         </View>
-
-        <Link href={"/searchbar"}>
-          <Pressable style={styles.inputContainer}>
-            <EvilIcons name="search" size={24} color="black" />
-
-            <Text
-              style={{
-                color: "gray",
-                fontSize: 16,
-                marginLeft: 10,
-              }}
-            >
-              Search Movies...
-            </Text>
-          </Pressable>
-        </Link>
+        <View style={styles.innerSecconaitner}>
+          <Link href={"/searchbar"} asChild>
+            <Pressable style={styles.inputContainer}>
+              <EvilIcons name="search" size={24} color="black" />
+              <Text style={styles.searchPlaceholder} numberOfLines={1}>
+                Search Movies...
+              </Text>
+            </Pressable>
+          </Link>
+        </View>
       </View>
       {loading ? (
         <View
@@ -254,8 +248,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     paddingTop: 1,
+    paddingHorizontal: 16,
+    width: "100%",
     height: "13%",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#101215",
   },
@@ -263,7 +259,7 @@ const styles = StyleSheet.create({
   innercontainer: {
     flexDirection: "row",
     backgroundColor: "#101215",
-    width: "8%",
+    padding: 2,
   },
 
   box: {
@@ -271,14 +267,27 @@ const styles = StyleSheet.create({
     backgroundColor: "#101215",
   },
 
+  innerSecconaitner: {
+    flex: 1,
+    marginLeft: 12,
+    height: "40%",
+  },
+
   inputContainer: {
-    width: 550,
     height: 50,
+    flex: 1,
     backgroundColor: "#fff",
-    borderRadius: 16,
+    borderRadius: 10,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 10,
+  },
+
+  searchPlaceholder: {
+    color: "gray",
+    fontSize: 16,
+    marginLeft: 10,
+    flexShrink: 1,
   },
 
   text: {

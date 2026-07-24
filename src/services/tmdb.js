@@ -63,7 +63,6 @@ export const getMovieTrailer = async (id) => {
 
   const data = await response.json();
 
-  // Find the official YouTube trailer
   const trailer = data.results.find(
     (video) => video.site === "YouTube" && video.type === "Trailer",
   );
